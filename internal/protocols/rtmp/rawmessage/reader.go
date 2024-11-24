@@ -207,9 +207,9 @@ func (rc *readerChunkStream) readMessage(typ byte) (*Message, error) {
 			return &rc.mr.msg, nil
 		}
 
-		if !rc.curTimestampDeltaAvailable {
-			return nil, fmt.Errorf("received type 3 chunk without previous chunk")
-		}
+		//if !rc.curTimestampDeltaAvailable {
+		//	return nil, fmt.Errorf("received type 3 chunk without previous chunk")
+		//}
 
 		chunkBodyLen := rc.curBodyLen
 		if chunkBodyLen > rc.mr.chunkSize {
